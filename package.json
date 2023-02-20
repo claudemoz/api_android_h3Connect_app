@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=production npm run migrate && NODE_ENV=production node app.js",
-    "dev": "NODE_ENV=development npm run migrate && NODE_ENV=development nodemon app.js",
-    "migrate": " sequelize-cli db:migrate "
+    "start": "cross-env NODE_ENV=production npm run migrate && cross-env NODE_ENV=production node app.js",
+    "dev": "cross-env NODE_ENV=development npm run migrate && cross-env NODE_ENV=development nodemon app.js",
+    "migrate": " sequelize db:migrate "
   },
   "_moduleAliases": {
     "@root": ".",
