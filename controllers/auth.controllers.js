@@ -7,7 +7,13 @@ exports.login = async (req, res, next)=>{
     const { email, password } = req.body
     try {
         const user = await User.findOne({where:{email:email}});
-        if(user){
+        if(!user){
+            res.status(400).json({
+                success: false,
+                msg: 'user does not exist'
+            })
+            
+        }else{
             const checkPassword = await bcrypt.compare(password, user.password)
             if(!checkPassword){
                 res.status(400).json({
@@ -21,7 +27,6 @@ exports.login = async (req, res, next)=>{
                 token: createToken(user),
                 user: user
             })
-
         }
     } catch (e) {
         console.log(e);
