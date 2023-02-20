@@ -24,17 +24,17 @@ module.exports = {
     }
   },
   production: {
-    username: process.env.PROD_DB_USERNAME,
-    password: process.env.PROD_DB_PASSWORD,
-    database: process.env.PROD_DB_NAME,
-    host: process.env.PROD_DB_HOSTNAME,
-    port: process.env.PROD_DB_PORT,
-    dialect: 'mysql',
+    username: 'vkyalhbid00tnmvy',
+    password: 'y1a4txvdxvjvn7s6',
+    database: 'pwjv8lz5jjfpg6j3',
+    host: 'eporqep6b4b8ql12.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
+    port: 3306,
+    dialect: 'mariadb',
     dialectOptions: {
       bigNumberStrings: true,
-      // ssl: {
-      //   ca: fs.readFileSync(__dirname + '/mysql-ca-main.crt')
-      // }
+      ssl: {
+        rejectUnauthorized: false
+      }
     }
   }
 };
