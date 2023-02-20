@@ -28,7 +28,8 @@
     "module-alias": "^2.2.2",
     "mysql2": "^3.1.2",
     "sequelize": "^6.28.0",
-    "sequelize-cli": "^6.6.0"
+    "sequelize-cli": "^6.6.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
