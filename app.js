@@ -1,6 +1,6 @@
 require('module-alias/register')
 const express = require('express');
-const logger = require('morgan');
+const logger = process.env.NODE_ENV === 'development' ? require('morgan') : null ;
 const cors = require('cors');
 const app =  express();
 
