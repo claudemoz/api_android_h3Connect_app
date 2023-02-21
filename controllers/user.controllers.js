@@ -6,7 +6,7 @@ exports.createUser = async (req, res, next)=>{
   const { username, email, password, passwordConfirm } = req.body;
   // const salt = await bcrypt.genSalt();
   // const hashedPassword = await bcrypt.hash(password, salt);
-  if(!email || !password || !passwordConfirm){
+  if(!username || !email || !password || !passwordConfirm){
     res.status(400).json({msg: 'missing data'});
     return;
   }
