@@ -17,7 +17,7 @@ exports.checkToken = async (req, res, next)=>{
     try {
         await jwt.verify(token, SECRET, async (err, decoded)=>{
           if(err){
-            res.status(401).json({msg: 'Token not valid'})
+            return res.status(401).json({msg: 'Token not valid'})
           }else{
             const user = await User.findOne({attributes: { exclude: ['password'] }, where:{id_user: decoded.sub}});
             if(user){

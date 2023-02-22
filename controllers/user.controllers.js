@@ -16,7 +16,7 @@ exports.createUser = async (req, res, next)=>{
   }
 
   try {
-    const user = await User.findOne({attributes: { exclude: ['password'] },where:{email:email}});
+    const user = await User.findOne({attributes: { exclude: ['password'] },where:{email:email}, logging:false});
     if(!user){
       const newUser = await User.create({username, email, password })
       if(newUser){
@@ -29,8 +29,8 @@ exports.createUser = async (req, res, next)=>{
       return res.status(409).json({msg: 'user already exit'});
     }
   } catch (error) {
-      console.log(error);
-      res.status(500).send(error)
+    console.log(error);
+    Object.keys(error.errors).map(key => error.errors[key].validatorKey === "isEmail" ? res.status(500).send({msg: "Invalide email"}) : error)
   }
     
 }
