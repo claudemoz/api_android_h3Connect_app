@@ -74,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
         }
 
         if (user.username) {
-          user.username = user.username.charAt(0).toUpperCase() + user.username.slice(1);
+          user.username = user.username.charAt(0).toUpperCase() + user.username.slice(1).toLowerCase();
         }
       })
     },
