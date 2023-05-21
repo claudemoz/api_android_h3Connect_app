@@ -4,12 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production npm run migrate && cross-env NODE_ENV=production node app.js",
+    "start": "cross-env NODE_ENV=production npm run migrate && cross-env NODE_ENV=production node  app.js",
     "dev": "cross-env NODE_ENV=development npm run migrate && cross-env NODE_ENV=development nodemon app.js",
     "migrate": " sequelize-cli db:migrate "
   },
   "_moduleAliases": {
     "@root": ".",
+    "@config": "./config",
     "@middlewares": "./middlewares",
     "@models": "./models/index.js",
     "@controllers": "./controllers",
@@ -20,18 +21,25 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "colors": "^1.4.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "firebase": "^9.18.0",
+    "firebase-admin": "^11.5.0",
     "jsonwebtoken": "^9.0.0",
     "mariadb": "^3.1.0",
     "module-alias": "^2.2.2",
+    "moment": "^2.29.4",
+    "multer": "^1.4.5-lts.1",
     "mysql2": "^3.1.2",
     "sequelize": "^6.28.0",
-    "sequelize-cli": "^6.6.0"
+    "sequelize-cli": "^6.6.0",
+    "swagger-ui-express": "^4.6.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
   }
 }

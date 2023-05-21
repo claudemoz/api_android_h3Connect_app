@@ -2,19 +2,19 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('User', {
-      id_user: {
-        type: Sequelize. INTEGER,
+    await queryInterface.createTable('actor', {
+      id_actor: {
+        type: Sequelize.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true,
       },
-      username: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       email: {
-        type: Sequelize. STRING,
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true,
         validate:{
@@ -22,14 +22,24 @@ module.exports = {
         }
       },
       password:{
-        type: Sequelize. STRING,
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      profile_img:{
-        type: Sequelize. STRING,
+      avatar:{
+        type: Sequelize.STRING,
         allowNull: true,
-        defaultValue: null
+        defaultValue: "https://firebasestorage.googleapis.com/v0/b/androidapph3connect.appspot.com/o/images%2Fdefault_profil.jpg?alt=media&token=fc4d9bf2-ace0-4471-8595-a6991912f20d"
       },
+      address:{
+        type:Sequelize.STRING,
+        allowNull: true,
+        default: null
+      }, 
+      tel:{
+        type:Sequelize.STRING,
+        allowNull: true,
+        default: null
+      }, 
       createdAt: {
         allowNull: false,
         type: Sequelize. DATE
@@ -41,6 +51,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('User');
+    await queryInterface.dropTable('actor');
   }
 };

@@ -1,0 +1,275 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentation API",
+        "version": "1.0.0",
+        "description": "API REST pour application mobile de prise rendez-vous médicaux."
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5000/",
+            "description": "dev"
+        }
+    ],
+    "tags": [
+        {
+            "name": "actor",
+            "description": "Methodes permettant la gestion des acteurs ou utilisateur"
+        },
+        {
+            "name": "appointement",
+            "description": "Methodes permettant la gestion des rendez-vous"
+        },
+        {
+            "name": "planning",
+            "description": "Methodes permettant la gestion des rendez-vous"
+        }
+    ],
+    "paths": {
+        "/api/v1/auth/login": {
+            "post": {
+                "summary": "/api/v1/auth/login",
+                "responses": {},
+                "tags": [
+                    "actor"
+                ]
+            }
+        },
+        "/api/v1/actor/doctor/list": {
+            "get": {
+                "summary": "/api/v1/actor/doctor/list",
+                "responses": {},
+                "tags": [
+                    "actor"
+                ]
+            }
+        },
+        "/api/v1/actor/{id_actor(\\d+)}": {
+            "get": {
+                "summary": "/api/v1/actor/{id_actor(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_actor(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "actor"
+                ]
+            }
+        },
+        "/api/v1/actor/update/{id_actor(\\d+)}": {
+            "put": {
+                "summary": "/api/v1/actor/update/{id_actor(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_actor(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "actor"
+                ]
+            }
+        },
+        "/api/v1/actor/register": {
+            "post": {
+                "summary": "/api/v1/actor/register",
+                "responses": {},
+                "tags": [
+                    "actor"
+                ]
+            }
+        },
+        "/api/v1/actor/upload/profile/{id_actor(\\d+)}": {
+            "post": {
+                "summary": "/api/v1/actor/upload/profile/{id_actor(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_actor(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "actor"
+                ]
+            }
+        },
+        "/api/v1/date_time/doctor-plannig/add-date-time": {
+            "post": {
+                "summary": "/api/v1/date_time/doctor-plannig/add-date-time",
+                "responses": {},
+                "tags": [
+                    "planning"
+                ]
+            }
+        },
+        "/api/v1/date_time/doctor-plannig/add-time-to-date": {
+            "post": {
+                "summary": "/api/v1/date_time/doctor-plannig/add-time-to-date",
+                "responses": {},
+                "tags": [
+                    "planning"
+                ]
+            }
+        },
+        "/api/v1/date_time/date-time-list/{id_actor(\\d+)}": {
+            "get": {
+                "summary": "/api/v1/date_time/date-time-list/{id_actor(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_actor(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "planning"
+                ]
+            }
+        },
+        "/api/v1/date_time/time-list/{id_date(\\d+)}": {
+            "get": {
+                "summary": "/api/v1/date_time/time-list/{id_date(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_date(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "planning"
+                ]
+            }
+        },
+        "/api/v1/date_time/doctor-plannig/update/{id_date(\\d+)}": {
+            "put": {
+                "summary": "/api/v1/date_time/doctor-plannig/update/{id_date(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_date(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "planning"
+                ]
+            }
+        },
+        "/api/v1/date_time/doctor-plannig/delete/{id_date(\\d+)}": {
+            "delete": {
+                "summary": "/api/v1/date_time/doctor-plannig/delete/{id_date(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_date(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "planning"
+                ]
+            }
+        },
+        "/api/v1/appointment/doctor/{id_actor(\\d+)}": {
+            "get": {
+                "summary": "/api/v1/appointment/doctor/{id_actor(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_actor(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "appointment"
+                ]
+            }
+        },
+        "/api/v1/appointment/patient/{id_actor(\\d+)}": {
+            "get": {
+                "summary": "/api/v1/appointment/patient/{id_actor(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_actor(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "appointment"
+                ]
+            }
+        },
+        "/api/v1/appointment/{id_appointment(\\d+)}": {
+            "get": {
+                "summary": "/api/v1/appointment/{id_appointment(\\d+)}",
+                "parameters": [
+                    {
+                        "name": "id_appointment(\\d+)",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "appointment"
+                ]
+            }
+        },
+        "/api/v1/appointment/add-appointment": {
+            "post": {
+                "summary": "/api/v1/appointment/add-appointment",
+                "responses": {},
+                "tags": [
+                    "appointment"
+                ]
+            }
+        }
+    },
+    "tags": []
+}
