@@ -3,7 +3,7 @@
     "info": {
         "title": "Documentation API",
         "version": "1.0.0",
-        "description": "API REST pour application mobile de prise rendez-vous médicaux."
+        "description": "API REST pour l'application mobile de prise de rendez-vous médicaux."
     },
     "servers": [
         {
