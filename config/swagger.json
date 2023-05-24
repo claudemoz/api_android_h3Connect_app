@@ -9,6 +9,11 @@
         {
             "url": "http://localhost:5000/",
             "description": "dev"
+        }, 
+
+        {
+            "url": "https://androidapi.herokuapp.com/api",
+            "description": "prod"
         }
     ],
     "tags": [
