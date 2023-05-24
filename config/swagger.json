@@ -12,7 +12,7 @@
         }, 
 
         {
-            "url": "https://androidapi.herokuapp.com/api",
+            "url": "https://androidapi.herokuapp.com/",
             "description": "prod"
         }
     ],
